@@ -62,6 +62,15 @@ class Store {
     books.push(book);
     localStorage.books = JSON.stringify(books);
   }
+  static deleteBook(isbn) {
+    let books = this.getData();
+    books.forEach((e, i) => {
+      if ((e.isbn = isbn)) {
+        books.splice(i, 1);
+      }
+    });
+    localStorage.books = JSON.stringify(books);
+  }
 }
 // Event Listener
 submit.addEventListener('click', (e) => {
@@ -80,6 +89,7 @@ submit.addEventListener('click', (e) => {
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
     UI.deleteBook(e.target);
+    Store.deleteBook(e.target.previousSibling.textContent);
   }
 });
 
