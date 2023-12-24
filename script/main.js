@@ -33,6 +33,9 @@ class UI {
     row.innerHTML = `<td>${obj.title}</td><td>${obj.author}</td><td class="d-flex justify-content-between">${obj.isbn} <a href="#" class="text-decoration-none fw-bold text-danger delete">X</a></td> `;
     tBody.append(row);
   }
+  static loadBooks(books) {
+    books.forEach((book) => this.addBook(book));
+  }
   static clearInput() {
     title.value = '';
     author.value = '';
@@ -79,3 +82,7 @@ container.addEventListener('click', (e) => {
     UI.deleteBook(e.target);
   }
 });
+
+document.addEventListener('DOMContentLoaded', () =>
+  UI.loadBooks(Store.getData())
+);
