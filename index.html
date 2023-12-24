@@ -7,8 +7,8 @@
     <title>Library-Admin</title>
   </head>
   <body>
-    <div class="container">
-      <div class="py-5 px-3 row justify-content-center">
+    <div class="container main">
+      <div class="row flex-column align-items-center py-5 px-3">
         <h1 class="text-center mb-4">Library-Admin</h1>
         <form action="#" class="col-md-6 p-0">
           <div class="mb-3">
@@ -30,7 +30,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="isbn" class="form-label">Book ISBN#</label>
+            <label for="isbn" class="form-label">Book ISBN</label>
             <input
               type="text"
               class="form-control"
@@ -45,6 +45,19 @@
             value="Add Book"
           />
         </form>
+        <div class="col-md-6  mt-5">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">ISBN</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <script src="script/bootstrap.js"></script>
