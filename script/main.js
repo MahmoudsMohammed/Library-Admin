@@ -43,6 +43,7 @@ submit.addEventListener('click', (e) => {
     let book = new Book(title.value, author.value, isbn.value);
     UI.addBook(book);
     UI.clearInput();
+    UI.showMessage('Book Added :)', true);
   }
   e.preventDefault();
 });
