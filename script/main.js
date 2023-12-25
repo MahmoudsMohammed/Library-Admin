@@ -30,7 +30,13 @@ class UI {
   }
   static addBook(obj) {
     let row = document.createElement('tr');
-    row.innerHTML = `<td>${obj.title}</td><td>${obj.author}</td><td class="d-flex justify-content-between">${obj.isbn} <a href="#" class="text-decoration-none fw-bold text-danger delete">X</a></td> `;
+    row.innerHTML = `
+    <td class="pt-3">${obj.title}</td>
+    <td class="pt-3">${obj.author}</td>
+    <td class="pt-3">${obj.isbn}</td>
+    <td>
+    <button class="btn btn-danger delete d-block ms-auto">Delete</button>
+    </td> `;
     tBody.append(row);
   }
   static loadBooks(books) {
@@ -48,6 +54,7 @@ class UI {
 }
 // Class Deale with local storage
 class Store {
+  // Get all Books From LS
   static getData() {
     let books;
     if (localStorage.books === undefined) {
@@ -57,15 +64,17 @@ class Store {
     }
     return books;
   }
+  // Add To Local Storage
   static saveBook(book) {
     let books = this.getData();
     books.push(book);
     localStorage.books = JSON.stringify(books);
   }
+  // Delete Book From LS 
   static deleteBook(isbn) {
     let books = this.getData();
     books.forEach((e, i) => {
-      if ((e.isbn = isbn)) {
+      if (e.isbn === isbn) {
         books.splice(i, 1);
       }
     });
@@ -86,13 +95,14 @@ submit.addEventListener('click', (e) => {
   e.preventDefault();
 });
 
+// Event Delegation to target delete button
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
+    Store.deleteBook(e.target.parentElement.previousElementSibling.innerText);
     UI.deleteBook(e.target);
-    Store.deleteBook(e.target.previousSibling.textContent);
   }
 });
-
-document.addEventListener('DOMContentLoaded', () =>
-  UI.loadBooks(Store.getData())
-);
+// Add all Books at list when documnet load
+document.addEventListener('DOMContentLoaded', () => {
+  UI.loadBooks(Store.getData());
+});
