@@ -5,7 +5,7 @@ An app built with OOP architecture that helps library admin manage the library.
 ## Table of contents
 
 - [Overview](#overview)
-  - [The Loan-Calculator features](#the-Loan-Calculator-features)
+  - [The Library-Admin features](#the-Library-Admin-features)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -15,12 +15,14 @@ An app built with OOP architecture that helps library admin manage the library.
 
 ## Overview
 
-### The Loan-Calculator features
+### The Library-Admin features
 
 Users should be able to:
 
-- Write the loan amount, interest, and years to repay then get the total payment, monthly payment, and total interest.
-- If you forget one of the input fields then the alert will appear to warn you.
+- Add book to the Books list
+- Delete the book from the list
+- See the alert if you want to add a book with uncompleted fields
+- Save and delete to local storage to keep the list even when reloading the page
 
 ### Screenshot
 
@@ -30,25 +32,26 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL : [Loan-Calculator](https://mahmoudsmohammed.github.io/Loan-Calculator/)
+- Live Site URL : [Library-Admin](https://mahmoudsmohammed.github.io/Library-Admin/)
 
 ## My process
 
 ### Built with
 
-- HTML5
-- CSS3
-- SASS
+- HTML 5
+- CSS 3
+- Bootstrap 5
 - JavaScript
+- Es6 Classes
 
 ### What I learned
 
 - How structure the project files.
 - Using Git and Github.
-- Use SASS and learn how to structure my files to be easy to debug.
-- SASS Placeholder and Variables which save a lot of time.
-- How to Manipulate Dom With JavaScript.
-- Using setTimeOut to Control of Execution.
+- Using Bootstrap Which Saves A lot Of Time 
+- OOP Design The app is based on Classes and Objects
+- Prototype Chain and Prototype Inheritance
+- How to Manipulate Dom With JavaScript
 
 ## Author
 

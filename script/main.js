@@ -70,7 +70,7 @@ class Store {
     books.push(book);
     localStorage.books = JSON.stringify(books);
   }
-  // Delete Book From LS 
+  // Delete Book From LS
   static deleteBook(isbn) {
     let books = this.getData();
     books.forEach((e, i) => {
